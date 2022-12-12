@@ -12,6 +12,7 @@
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "bootstrap": "^4.6.0",
+    "destack": "^1.0.3",
     "font-awesome": "^4.7.0",
     "next": "10.0.7",
     "react": "17.0.1",
