@@ -2,7 +2,7 @@ import {auth_default} from "./authService";
 import { editor_default } from "./editorService";
 import { utils_default } from "./utilsService";
 import { editor_default as Editor } from "../services/editorService";
-import ClipboardJS from "clipboard";
+import ClipboardJS from "clipboard/dist/clipboard.js";
 export const modal_default = (() => {
     const Modal = {
         open(id) {
@@ -362,13 +362,13 @@ export const modal_default = (() => {
                 if (contentWrapper) {
                     contentWrapper.innerHTML = html;
                 }
-                // const clipboard2 = ClipboardJS.default("[data-clipboard-target]");
-                // clipboard2.on("success", function(e) {
-                //     e.clearSelection();
-                //     editor_default.actions.snackBar({
-                //         message: "Link copied to your clipboard"
-                //     });
-                // });
+                const clipboard2 = ClipboardJS.default("[data-clipboard-target]");
+                clipboard2.on("success", function(e) {
+                    e.clearSelection();
+                    editor_default.actions.snackBar({
+                        message: "Link copied to your clipboard"
+                    });
+                });
             }
         },
         init() {
