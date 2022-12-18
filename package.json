@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
@@ -16,9 +17,9 @@
     "destack": "^1.0.3",
     "font-awesome": "^4.7.0",
     "html2canvas": "^1.4.1",
-    "next": "10.0.7",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "reactstrap": "^8.9.0"
   }
 }

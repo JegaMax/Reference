@@ -73,6 +73,7 @@ export const DashboardSidebar = (props) => {
         <div>
           <Box sx={{ p: 3 }}>
             <NextLink
+            legacyBehavior
               href="/"
               passHref
             >

@@ -20,6 +20,7 @@ export const NavItem = (props) => {
       {...others}
     >
       <NextLink
+      legacyBehavior
         href={href}
         passHref
       >

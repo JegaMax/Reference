@@ -1,9 +1,15 @@
 import {modal_default}from "../services/modalService";
 import { editor_default as Editor } from "../services/editorService";
+import Script from 'next/script'
 const myApp = () => {
     return(
         <>
     <meta charSet="utf-8" />
+    <link rel="stylesheet" id="edit-story-css" href="./assets/editor/css/edit-story.css" />
+    <Script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" />
+    <Script src="./assets/js/wp.js" />
+    <Script src="./assets/js/wp.i18n.js" />
+    <Script src="./assets/js/app.bundle.js" />
     <title>Editor / webStories.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="With webStories you can create amp-stories quick and easily. No code needed." />
@@ -28,12 +34,12 @@ const myApp = () => {
 
 
 
-    <script type="text/javascript">{`
+    <Script type="text/javascript">{`
         document.body.className = document
             .body
             .className
-            .replace(no-js, js);
-    `}</script>
+            .replace('no-js', 'js');
+    `}</Script>
     <div id="modal__welcome" className="c-modal c-modal--center">
         <div className="c-modal__window c-modal__window--large mdl-card mdl-shadow--2dp">
             <img alt="webStories logo" title="webStories" src="/assets/images/logo-full-color.svg" height="64" className="c-logo" />
@@ -190,107 +196,14 @@ w<span className="c-header__logoTextSlide">eb</span>S<span className="c-header__
             <div className="c-modal__content" />
         </div>
     </div>
-    <link rel="stylesheet" id="edit-story-css" href="./assets/editor/css/edit-story.css" />
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" />
-    <script src="./assets/js/wp.js" />
-    <script src="./assets/js/wp.i18n.js" />
-    <script src="./assets/js/app.bundle.js" />
-    <script id="edit-story-js-translations">{`
-        (function(domain, translations) {
-            var localeData = translations.locale_data[domain] || translations.locale_data.messages;
-            localeData[""].domain = domain;
-            wp
-                .i18n
-                .setLocaleData(localeData, domain);
-        })("web-stories", {
-            "locale_data": {
-                "messages": {
-                    "": {}
-                }
-            }
-        });
-    `}</script>
-    <script src="./assets/editor/js/edit-story.js" id="edit-story-js" />
+    <Script src="./assets/editor/js/edit-story.js" id="edit-story-js" />
 
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js" />
+    <Script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js" />
 
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js" />
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js" />
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js" />
-    <script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.js" />
-{/* <button onClick={()=> {modal_default.open('modal__login')}} className="c-header__actionsButton s-showUnauthenticated">
-            <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                <g>
-                    <rect fill="none" height="24" width="24" />
-                </g>
-                <g>
-                    <path d="M11,7L9.6,8.4l2.6,2.6H2v2h10.2l-2.6,2.6L11,17l5-5L11,7z M20,19h-8v2h8c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-8v2h8V19z" />
-                </g>
-            </svg>
-            <span>Login</span>
-        </button><button onClick={()=> {modal_default.open('modal__account')}} className="c-header__actionsButton s-showAuthenticated">
-                <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M10.25 13c0 .69-.56 1.25-1.25 1.25S7.75 13.69 7.75 13s.56-1.25 1.25-1.25 1.25.56 1.25 1.25zM15 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm7 .25c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zM10.66 4.12C12.06 6.44 14.6 8 17.5 8c.46 0 .91-.05 1.34-.12C17.44 5.56 14.9 4 12 4c-.46 0-.91.05-1.34.12zM4.42 9.47c1.71-.97 3.03-2.55 3.66-4.44C6.37 6 5.05 7.58 4.42 9.47zM20 12c0-.78-.12-1.53-.33-2.24-.7.15-1.42.24-2.17.24-3.13 0-5.92-1.44-7.76-3.69C8.69 8.87 6.6 10.88 4 11.86c.01.04 0 .09 0 .14 0 4.41 3.59 8 8 8s8-3.59 8-8z" />
-                </svg>
-                <span>My Stories</span>
-            </button><button onClick={()=> {modal_default.open('modal__templates')}} className="c-header__actionsButton">
-                <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16zm0-11.47L17.74 9 12 13.47 6.26 9 12 4.53z" />
-                </svg>
-                <span>New Story</span>
-            </button><button onClick={Editor.actions.preview()} className="c-header__actionsButton">
-                <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z" />
-                </svg>
-                <span>Preview</span>
-            </button><button onClick={Editor.actions.save()} className="c-header__actionsButton">
-                <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z" />
-                </svg>
-                <span>Save</span>
-            </button><button onClick={()=> {modal_default.open('modal__export')}} className="c-header__actionsButton c-header__actionsButton--primary">
-                <svg className="c-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z" />
-                </svg>
-                <span>Export</span>
-            </button>
-            <><div id="modal__export" className="c-modal c-modal--center">
-        <div className="c-modal__window c-modal__window--withHeader c-modal__window--managed mdl-card mdl-shadow--2dp" title="Export">
-            <div className="c-modal__content" />
-        </div>
-    </div>
-    <div id="modal__login" className="c-modal">
-        <div className="c-modal__window c-modal__window--withHeader c-modal__window--managed mdl-card mdl-shadow--2dp">
-            <div className="c-modal__content">
-                <div id="firebaseui-auth-container" />
-            </div>
-        </div>
-    </div>
-    <div id="modal__upload" className="c-modal">
-        <div className="c-modal__window c-modal__window--withHeader c-modal__window--managed mdl-card mdl-shadow--2dp" title="Upload files">
-            <div className="c-modal__content" />
-        </div>
-    </div>
-    <div id="modal__account" className="c-modal">
-        <div className="c-modal__window c-modal__window--extralarge c-modal__window--withHeader c-modal__window--managed mdl-card mdl-shadow--2dp" title="My Stories">
-            <div className="c-modal__content" />
-        </div>
-    </div>
-    <div id="modal__templates" className="c-modal">
-        <div className="c-modal__window c-modal__window--extralarge c-modal__window--withHeader c-modal__window--managed mdl-card mdl-shadow--2dp" title="Select a Template">
-            <div className="c-modal__content" />
-        </div>
-    </div>
-    <div id="modal__preview" className="c-modal">
-        <div className="c-modal__window c-modal__window--withHeader c-modal__window--full mdl-card mdl-shadow--2dp" title="Preview">
-            <div className="c-modal__content" />
-        </div>
-    </div></> */}
+    <Script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js" />
+    <Script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js" />
+    <Script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js" />
+    <Script src="https://www.gstatic.com/firebasejs/ui/4.7.0/firebase-ui-auth.js" />
             </>
     );
     // welcome() {
