@@ -1,0 +1,5 @@
+export const selectMediaType = {
+  CREATE_LAYER : 'CREATE_LAYER',
+  REPLACE_MEDIA : 'REPLACE_MEDIA',
+  SELECT_CTA_IMAGE : 'SELECT_CTA_IMAGE',
+}

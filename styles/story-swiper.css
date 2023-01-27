@@ -1,0 +1,9 @@
+.story-container {
+  overflow: visible;
+  padding-right: 90px;
+}
+
+.swiper-slide-styles {
+  width: auto !important;
+  transform: none !important;
+}

@@ -1,0 +1,56 @@
+.custom-color-picker .react-colorful {
+  width: auto;
+  height: auto;
+}
+
+.custom-color-picker .react-colorful__saturation {
+  border-radius: 8px;
+  position: relative;
+  height: 84px;
+  margin-bottom: 24px;
+  border-bottom: none;
+}
+
+.custom-color-pocker-settings-modal .react-colorful__saturation {
+  height: 164px;
+}
+
+.custom-color-picker .react-colorful__hue,
+.custom-color-picker .react-colorful__alpha {
+  position: relative;
+  height: 5px;
+  width: calc(100% - 16px);
+  margin: 0 auto 22px;
+}
+
+.react-colorful__alpha.react-colorful__last-control {
+  background-image: url('./images/checkers.svg');
+  background-color: transparent;
+  background-size: 45px;
+}
+
+.custom-color-picker .react-colorful__hue {
+  border-radius: 5px;
+}
+
+.custom-color-picker .react-colorful__alpha {
+  border-radius: 12px;
+}
+
+.custom-color-picker .react-colorful__hue-pointer,
+.custom-color-picker .react-colorful__alpha-pointer {
+  width: 16px;
+  height: 16px;
+}
+
+.custom-color-picker .react-colorful__saturation-pointer {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  box-shadow: none;
+}
+
+.custom-color-picker .react-colorful__hue-pointer > .react-colorful__pointer-fill,
+.custom-color-picker .react-colorful__alpha-pointer > .react-colorful__pointer-fill {
+  background-color: #ffffff !important;
+}

@@ -1,0 +1,16 @@
+export const layerTypes = {
+  IMAGE : 'image',
+  GIFS : 'gifs',
+  STICKERS : 'stickers',
+  VIDEO : 'video',
+  SHAPE : 'shape',
+  CTA_LINK : 'cta-link',
+  TEXT : 'text',
+  HTML : 'html',
+  TEMPLATES : 'templates',
+  NEW_LAYER : 'newLayer',
+  UPLOAD : 'upload',
+  GRADIENTS : 'gradients',
+  OUTLINK : 'outlink',
+  GROUP : 'group',
+}

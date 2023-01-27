@@ -1,0 +1,343 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import './fonts.css'; */
+@import './animations.css';
+@import './color-picker.css';
+
+:root {
+  --primary: #f6522b;
+  --white: #ffffff;
+  --black: #000;
+  --shade-900: #14141f;
+  --shade-800: #181823;
+  --shade-700: #21212c;
+  --shade-500: #2e2e38;
+  --shade-300: #505062;
+  --shade-100: #ababba;
+  --dpa-color: #4468dd;
+
+  --warning: #e73b64;
+  --success: #06dcb5;
+  --social-fb: #1558d6;
+  --social-fb-text: rgba(132, 146, 166, 0.75);
+  --default-editor-bg: #eeeeee;
+
+  --shade-900-95: rgba(20, 20, 31, 0.95);
+
+  --primary-85: rgba(246, 82, 43, 0.85);
+  --white-85: rgba(255, 255, 255, 0.85);
+  --shade-900-85: rgba(20, 20, 31, 0.85);
+  --shade-700-85: rgba(33, 33, 44, 0.85);
+  --shade-500-85: rgba(46, 46, 56, 0.85);
+  --shade-300-85: rgba(80, 80, 98, 0.85);
+  --shade-100-85: rgba(171, 171, 186, 0.85);
+
+  --primary-20: rgba(246, 82, 43, 0.2);
+  --shade-100-20: rgba(171, 171, 186, 0.2);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --shade-900-20: rgba(20, 20, 31, 0.2);
+
+  --primary-10: rgba(246, 82, 43, 0.1);
+  --white-10: rgba(255, 255, 255, 0.1);
+
+  --primary-50: rgba(246, 82, 43, 0.5);
+
+  --black-24: rgba(0, 0, 0, 0.24);
+  --black-18: rgba(0, 0, 0, 0.18);
+  --black-16: rgba(0, 0, 0, 0.16);
+  --black-10: rgba(0, 0, 0, 0.1);
+
+  --shade-900-80: rgba(20, 20, 31, 0.8);
+
+  --header-height: 56px;
+  --editor-height: calc(100vh - 56px);
+  --editor-wrapper-padding: 24px;
+  --toolbar-height: 304px;
+  --layer-button-height: 40px;
+  --toolbar-layers-menu-offset: 40px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--shade-500);
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: overlay;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 12px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 20px;
+  transition: background 0.12s ease;
+}
+body:hover {
+  scrollbar-width: thin;
+  scrollbar-color: var(--shade-300-85) transparent;
+}
+body:hover::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 2px;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  background: var(--shade-300-85);
+}
+
+.context-menu,
+.export-menu,
+.datepicker-menu {
+  /* Menus */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 0px;
+
+  background: var(--shade-700-85);
+  border: 1px solid var(--white-10);
+  box-shadow: 24px 32px 72px var(--black-18);
+  backdrop-filter: blur(50px);
+  border-radius: 12px;
+  z-index: 100;
+}
+
+.export-menu.conversion {
+  z-index: 9999;
+}
+
+.datepicker-menu {
+  border-color: var(--shade-300);
+}
+
+.rc-menu-hidden.rc-menu-hidden {
+  display: none;
+}
+
+.context-menu > .rc-menu.rc-menu-sub,
+.export-menu > .rc-menu.rc-menu-sub,
+.datepicker-menu > .rc-menu.rc-menu-sub {
+  background: none;
+  background-color: unset;
+  border: none;
+  box-shadow: unset;
+  border-radius: 0;
+  min-width: 176px;
+}
+
+.export-menu > .rc-menu.rc-menu-sub {
+  min-width: 224px;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(202, 197, 197, 0.288) !important;
+}
+
+.black-overlay p {
+  top: 50% !important;
+  font-family: 'Neto' !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+}
+
+#inlineEditWrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.parent-disable {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #666;
+  opacity: 0.8;
+  z-index: 9998;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+div > div.rc-tooltip {
+  padding: 0;
+}
+
+div > div.rc-tooltip .rc-tooltip-inner {
+  padding: 0;
+  color: unset;
+  background: transparent;
+  background-color: unset;
+  border-radius: 0;
+  min-height: unset;
+  border: none;
+}
+
+div > div.rc-tooltip .rc-tooltip-arrow {
+  position: absolute;
+  background-color: var(--shade-100);
+  text-align: left;
+  border: none;
+  margin: 0;
+  left: -1px;
+}
+div > div.rc-tooltip .rc-tooltip-arrow:before,
+div > div.rc-tooltip .rc-tooltip-arrow:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+}
+div > div.rc-tooltip .rc-tooltip-arrow,
+div > div.rc-tooltip .rc-tooltip-arrow:before,
+div > div.rc-tooltip .rc-tooltip-arrow:after {
+  width: 6px;
+  height: 6px;
+  border-top-right-radius: 40%;
+}
+
+.rc-tooltip-arrow.remove-arrow {
+  display: none !important;
+}
+
+div > div.rc-tooltip .rc-tooltip-arrow {
+  transform: rotate(-30deg) skewX(-30deg) scale(1, 0.866) translateY(calc(-50% - 1px));
+}
+div > div.rc-tooltip .rc-tooltip-arrow:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+}
+div > div.rc-tooltip .rc-tooltip-arrow:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+
+.rc-slider .rc-slider-handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: -7px !important;
+  border: none;
+  background-color: transparent !important;
+}
+
+.rc-slider .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+  box-shadow: none;
+}
+
+.rc-slider .rc-slider-handle:focus {
+  background: var(--white-20) !important;
+}
+
+.rc-slider .rc-slider-handle:active {
+  box-shadow: none;
+  border: none;
+  background: var(--white-20) !important;
+}
+
+.rc-slider-handle:before {
+  content: '';
+  background: var(--white);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.public-DraftEditor-content {
+  caret-color: var(--white);
+}
+
+.public-DraftEditor-content[contenteditable='false'] span::selection {
+  background: inherit;
+}
+
+div.rc-tooltip.transparent-none {
+  opacity: 1;
+}
+
+div.moveable-line.moveable-dashed {
+  background-color: transparent !important;
+  border-color: var(--primary) !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#editor {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.selecto-selection {
+  border: 2px solid #f6522b !important;
+  background: rgba(246, 82, 43, 0.2) !important;
+}
+
+.modal-scroll {
+  scrollbar-width: none;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 12px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 20px;
+  transition: background 0.12s ease;
+}
+
+.modal-scroll:hover {
+  scrollbar-width: thin;
+  scrollbar-color: var(--shade-300-85) transparent;
+}
+
+.modal-scroll:hover::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 2px;
+}
+
+.modal-scroll:hover::-webkit-scrollbar-thumb {
+  background: var(--shade-300-85);
+}

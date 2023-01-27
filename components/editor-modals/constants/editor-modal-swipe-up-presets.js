@@ -1,0 +1,82 @@
+export default [
+  {
+    id: 'swipeup-preset-01',
+    title: 'Swipe Up',
+    swipeUpIcon: true,
+    config: {
+      background: 'rgba(255,255,255,1)',
+      color: 'rgba(0,0,0,1)',
+    },
+    styles: {
+      fontFamily: 'Heebo',
+      color: 'var(--black)',
+      background: 'var(--white)',
+      borderRadius: '30px',
+      justifyContent: 'center',
+      fontWeight: '400',
+    },
+    chevron: true,
+  },
+  {
+    id: 'swipeup-preset-02',
+    title: 'Swipe Up',
+    swipeUpIcon: true,
+    config: {
+      background: 'rgba(0,0,0,1)',
+      color: 'rgba(255,255,255,1)',
+    },
+    styles: {
+      fontFamily: 'Heebo',
+      justifyContent: 'center',
+      color: 'var(--white)',
+      background: 'var(--black)',
+      borderRadius: '30px',
+      fontWeight: '400',
+    },
+    chevron: true,
+    hasBlackChevron: true,
+  },
+  // {
+  //   id: 'swipeup-preset-03',
+  //   title: 'Swipe Up',
+  //   swipeUpIcon: true,
+  //   config: {
+  //     background: 'rgba(0,0,0,1)',
+  //     color: 'rgba(255,255,255,1)',
+  //     logo: 'https://cutnut-web-prod.s3.eu-central-1.amazonaws.com/Gradients/Logo.svg',
+  //   },
+  //   styles: {
+  //     fontFamily: 'Heebo',
+  //     justifyContent: 'center',
+  //     color: 'var(--white)',
+  //     background: 'var(--black)',
+  //     borderRadius: '30px',
+  //     fontWeight: '400',
+  //   },
+
+  //   chevron: true,
+  //   hasBlackChevron: true,
+  //   icon: true,
+  // },
+  // {
+  //   id: 'swipeup-preset-04',
+  //   title: 'Swipe Up',
+  //   swipeUpIcon: true,
+  //   config: {
+  //     background: 'rgba(255,255,255,1)',
+  //     color: 'rgba(0,0,0,1)',
+  //     logo: 'https://cutnut-web-prod.s3.eu-central-1.amazonaws.com/Gradients/Logo.svg',
+  //   },
+  //   styles: {
+  //     fontFamily: 'Heebo',
+  //     color: 'var(--black)',
+  //     background: 'var(--white)',
+  //     borderRadius: '30px',
+  //     justifyContent: 'center',
+  //     fontWeight: '400',
+  //   },
+  //   chevron: true,
+  //   hasBlackChevron: false,
+  //   icon: true,
+  // },
+];

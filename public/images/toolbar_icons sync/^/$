@@ -1,0 +1,43 @@
+var map = {
+	"./new-cta-link-active.svg": 761,
+	"./new-cta-link-disabled.svg": 762,
+	"./new-cta-link.svg": 763,
+	"./new-image-active.svg": 764,
+	"./new-image-disabled.svg": 765,
+	"./new-image.svg": 766,
+	"./new-shape-active.svg": 767,
+	"./new-shape-disabled.svg": 768,
+	"./new-shape.svg": 769,
+	"./new-stories-active.svg": 770,
+	"./new-stories-disabled.svg": 771,
+	"./new-stories.svg": 772,
+	"./new-text-active.svg": 773,
+	"./new-text-disabled.svg": 774,
+	"./new-text.svg": 775,
+	"./new-upload-active.svg": 776,
+	"./new-upload-disabled.svg": 777,
+	"./new-upload.svg": 778,
+	"./template-active.svg": 779,
+	"./template-disabled.svg": 780,
+	"./template.svg": 781
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 760;
